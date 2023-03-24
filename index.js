@@ -1,38 +1,42 @@
-let offer = prompt("Оберіть день тижня");
+function calculator() {
+  let num1 = Number(prompt("Type first number"));
+  let num2 = Number(prompt("Type second number"));
+  let action = prompt("Choose your action: +, -, *, /");
+  let result;
 
+  switch (action) {
+    case "+": {
+      result = sum(num1, num2);
+      break;
+    }
+    case "-": {
+      result = sub(num1, num2);
+      break;
+    }
+    case "*": {
+      result = nultiply(num1, num2);
+      break;
+    }
+    case "/": {
+      result = divide(num1, num2);
+      break;
+    }
+    default: {
+      return false;
+    }
+  }
 
-
-switch (offer) {
-  case "1": {
-    console.log("you chose Понеділок");
-    break;
-  }
-  case "2": {
-    console.log("you chose Вівторок");
-    break;
-  }
-  case "3": {
-    console.log("you chose Середа");
-    break;
-  }
-  case "4": {
-    console.log("you chose Четвер");
-    break;
-  }
-  case "5": {
-    console.log("you chose П'ятниця");
-    break;
-  }
-  case "6": {
-    console.log("you chose Субота");
-    break;
-  }
-  case "7": {
-    console.log("you chose Неділя");
-    break;
-  }
-  default: {
-    console.log("Не вибрано");
-  }
+  return result;
 }
- 
+function sum(a, b) {
+  return a + b;
+}
+function sub(a, b) {
+  return a - b;
+}
+function nultiply(a, b) {
+  return a * b;
+}
+function divide(a, b) {
+  return a / b;
+}
