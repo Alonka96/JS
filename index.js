@@ -1,11 +1,38 @@
-let offer = prompt ('Оберіть напій \n1 - Tea \n2 - Coffee \n3 - juice');
+let offer = prompt("Оберіть день тижня");
 
-if( offer === '1') {
-  console.log("you chose tea");
-} else if( offer === '2') {
-  console.log("you chose coffee");
-} else if (offer === '3') {
-  console.log('you chose juice');
-} else {
-  console.log('no drink');
+
+
+switch (offer) {
+  case "1": {
+    console.log("you chose Понеділок");
+    break;
+  }
+  case "2": {
+    console.log("you chose Вівторок");
+    break;
+  }
+  case "3": {
+    console.log("you chose Середа");
+    break;
+  }
+  case "4": {
+    console.log("you chose Четвер");
+    break;
+  }
+  case "5": {
+    console.log("you chose П'ятниця");
+    break;
+  }
+  case "6": {
+    console.log("you chose Субота");
+    break;
+  }
+  case "7": {
+    console.log("you chose Неділя");
+    break;
+  }
+  default: {
+    console.log("Не вибрано");
+  }
 }
+ 
