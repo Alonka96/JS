@@ -1,42 +1,27 @@
-function calculator() {
-  let num1 = Number(prompt("Type first number"));
-  let num2 = Number(prompt("Type second number"));
-  let action = prompt("Choose your action: +, -, *, /");
-  let result;
+// let counter = 0;
+// while(counter<=10) {
+//   if(counter % 2 === 0) {
+//     console.log(counter);
+//   }
+//   counter++;
+// }
 
-  switch (action) {
-    case "+": {
-      result = sum(num1, num2);
-      break;
-    }
-    case "-": {
-      result = sub(num1, num2);
-      break;
-    }
-    case "*": {
-      result = nultiply(num1, num2);
-      break;
-    }
-    case "/": {
-      result = divide(num1, num2);
-      break;
-    }
-    default: {
-      return false;
-    }
-  }
 
-  return result;
+// let number = 0;
+// while(number<=15) {
+//   if((number % 3 === 0) && (number % 5 === 0)) {
+//     console.log(number);
+//   }
+//   number++;
+// }
+
+
+
+let sum = 0;
+let counter = 0;
+
+while(counter <= 20) {
+  sum += counter;
+  counter++;
 }
-function sum(a, b) {
-  return a + b;
-}
-function sub(a, b) {
-  return a - b;
-}
-function nultiply(a, b) {
-  return a * b;
-}
-function divide(a, b) {
-  return a / b;
-}
+console.log(sum);
