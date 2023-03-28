@@ -1,7 +1,12 @@
-function pow(base, powNumber){
-  let result = 1;
-  for(let i = 1; i <= powNumber; i++) {
-    result *= base;
-  }
-  return result;
-}
+let cat = {
+  color: "grey",
+  breed: "Dvorovyi",
+  name: "Houston",
+  sex: "male",
+  sayMeow: function () {
+    console.log("Meow");
+  },
+  sleep: function () {
+    console.log("i sleep");
+  },
+};
