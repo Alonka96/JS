@@ -8,5 +8,5 @@ let user2 = {
 };
 
 function sayHello(obj) {
-  console.log(obj.name + " say Hello");
+  console.log('${obj.name} say Hello ');
 }
