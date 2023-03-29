@@ -1,12 +1,12 @@
-let cat = {
-  color: "grey",
-  breed: "Dvorovyi",
-  name: "Houston",
-  sex: "male",
-  sayMeow: function () {
-    console.log("Meow");
-  },
-  sleep: function () {
-    console.log("i sleep");
-  },
+let user1 = {
+  name: "Alona",
+  lastName: "Lysenko",
 };
+let user2 = {
+  name: "Stepan",
+  lastName: "Lysenko",
+};
+
+function sayHello(obj) {
+  console.log(obj.name + " say Hello");
+}
