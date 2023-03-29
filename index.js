@@ -1,12 +1,12 @@
-let user1 = {
-  name: "Alona",
-  lastName: "Lysenko",
-};
-let user2 = {
-  name: "Stepan",
-  lastName: "Lysenko",
+const userPlan = {
+  mon: "dantist",
+  tue: "go to park",
+  wed: "hard work",
+  thu: "go party",
+  fri: "read a book",
+  sat: "stay in bed",
 };
 
-function sayHello(obj) {
-  console.log('${obj.name} say Hello ');
-}
+
+const userInput = prompt("What day do you want?");
+alert(`${userPlan[userInput] ? userPlan[userInput] : 'Noting planned'}`);
