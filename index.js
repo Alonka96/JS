@@ -1,28 +1,47 @@
-function Car(brand, maxSpeed = 200) {
-  this.brand = brand;
-  this.maxSpeed = maxSpeed;
-  this.speed = 0;
+const arr = [1, 4, 8, 9];
 
-  this.accelerate = function (value) {
-    this.speed += value;
-    if (this.speed > this.maxSpeed) {
-      this.speed = this.maxSpeed;
-    }
-    return this.speed;
-  };
-
-  this.deaccelerate = function (value) {
-    this.speed -= value;
-    if (this.speed < 0) {
-      this.speed = 0;
-    }
-    return this.speed;
-  };
-
-  this.stop = function () {
-    this.speed = 0;
-    return this.speed;
-  };
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
 }
 
-const bmv = new Car("BMV", 250);
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
+}
+console.log(sum);
+
+function getMaxElement(array) {
+  let max = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (max < array[i]) {
+      max = array[1];
+    }
+  }
+  return max;
+}
+
+function getMinElement(array) {
+  let min = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (min > array[i]) {
+      min = array[1];
+    }
+  }
+  return min;
+}
+
+function getAverage(arr) {
+  let sum = 0;
+  for (let i = 1; i < array.length; i++) {
+    sum += arr[i];
+  }
+  return sum / array.length;
+}
+
+function getSumOfEven(array) {
+  let sum = 0;
+  for (let i = 1; i < array.length; i = i + 2) {
+    sum += array[i];
+  }
+  return sum;
+}
