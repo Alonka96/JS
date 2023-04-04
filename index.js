@@ -1,18 +1,9 @@
-function Worker(firstName, lastName, rate, days) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  if (rate < 0) {
-    this.rate = 0;
-  } else {
-    this.rate = rate;
+function getMax() {
+  let max = arguments[0];
+  for (let i = 1; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
   }
-  if ((days = 0)) {
-    this.days = 0;
-  } else {
-    this.days = days;
-  }
-
-  this.getSalary = function () {
-    return this.days * this.rate;
-  };
+  return max;
 }
