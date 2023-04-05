@@ -1,9 +1,11 @@
-function getMax() {
-  let max = arguments[0];
-  for (let i = 1; i < arguments.length; i++) {
-    if (arguments[i] > max) {
-      max = arguments[i];
-    }
-  }
-  return max;
+function User(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
 }
+function UserPrototype() {
+  this.getFullName = function () {
+    return `${this.name} ${this.lastName}`;
+  };
+}
+
+User.prototype = new UserPrototype();
