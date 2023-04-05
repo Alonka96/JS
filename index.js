@@ -1,11 +1,16 @@
-function User(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-}
-function UserPrototype() {
-  this.getFullName = function () {
-    return `${this.name} ${this.lastName}`;
-  };
+function Ladder() {
+  this.step = 0;
 }
 
-User.prototype = new UserPrototype();
+function LadderPrototype() {
+  this.up = function () {
+    this.step++;
+  };
+  this.down = function () {
+    this.step--;
+  };
+  this.showStep = function () {
+    return this.step;
+  };
+}
+Ladder.prototype = new LadderPrototype();
