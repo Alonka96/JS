@@ -1,16 +1,11 @@
-function Ladder() {
-  this.step = 0;
-}
+class Worker {
+  constructor(name, rate, days) {
+    this.name = name;
+    this.rate = rate;
+    this.days = days;
+  }
 
-function LadderPrototype() {
-  this.up = function () {
-    this.step++;
-  };
-  this.down = function () {
-    this.step--;
-  };
-  this.showStep = function () {
-    return this.step;
-  };
+  getSalary() {
+    return this.rate * this.days;
+  }
 }
-Ladder.prototype = new LadderPrototype();
