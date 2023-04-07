@@ -1,42 +1,27 @@
-class Animal {
-  constructor(name, amountOfLegs, type) {
-    this.name = name;
-    this.amountOfLegs = amountOfLegs;
-    this.type = type;
-  }
-  set name(value) {
-    if (typeof value !== "string") {
-      throw new TypeError("Name must be a string");
-    }
-    this._name = value;
-  }
-
-  get name() {
-    return this._name;
-  }
-  saySomething() {
-    return `${this._name} making noize`;
-  }
-
-  eat() {
-    return `${this._name} is eating`;
-  }
-
-  static isAnimal(obj) {
-    return obj instanceof Animal;
+class User {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.isBanned = false;
   }
 }
-
-class Dog extends Animal {
-  constructor(name, amountOfLegs, type, color) {
-    super(name, amountOfLegs, type);
-    this.color = color;
+class Moderator extends User {
+  constructor(firstName, lastName) {
+    super(firstName, lastName);
+    this.isBanned = undefined;
+    this.position = "Moderator";
+  }
+  getBan(user) {
+    user.isBanned = true;
   }
 
-  set name(value) {
-    throw new ReferenceError("Dogs name is constant");
+  toggleBan(user) {
+    user.isBanned = !user.isBanned;
   }
-  run() {
-    return `${this._name} is running`;
+}
+class Admin extends Moderator {
+  constructor(firstName, lastName) {
+    super(firstName, lastName);
+    this.position = "Admin";
   }
 }
