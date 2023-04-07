@@ -1,55 +1,38 @@
-class Worker {
-  constructor(name, rate, days) {
+class Animal {
+  constructor(name, amountOfLegs, type) {
     this.name = name;
-    if (rate < 0) {
-      throw new RangeError("Rate must be more than zero");
-    } else {
-      this._rate = rate;
+    this.amountOfLegs = amountOfLegs;
+    this.type = type;
+  }
+  set name(value) {
+    if (typeof value !== "string") {
+      throw new TypeError("Name must be a string");
     }
-    if (days < 0) {
-      throw new RangeError("Days must be more than zero");
-    } else {
-      this._days = days;
-    }
+    this._name = value;
   }
 
-  // setRate(value) {
-  //   if (typeof value !== "number") {
-  //     throw new TypeError("Rate must be a number");
-  //   }
-  //   if (value < 0) {
-  //     throw new RangeError("Rate must be more than zero");
-  //   }
-  //   this._rate = value;
-  // }
-  set rate(value) {
-    // тут необхідні перевірки
-    this._rate = value;
+  get name() {
+    return this._name;
+  } 
+  saySomething() {
+    return `${this._name} making noize`;
   }
 
-  get rate() {
-    return this._rate;
+  eat() {
+    return `${this._name} is eating`;
   }
-
-  // setDays(value) {
-  //   if (typeof value !== "number") {
-  //     throw new TypeError("Days must be a number");
-  //   }
-  //   if (value < 0) {
-  //     throw new RangeError("Days must be more than zero");
-  //   }
-  //   this._days = value;
-  // }
-
-set days(value) {
-  // перевіряємо передане значення на правильність
-  this._days = value;
-}
-get days() {
-  return this._days;
 }
 
-  getSalary() {
-    return this.rate * this.days;
+class Dog extends Animal {
+  constructor(name, amountOfLegs, type, color) {
+    super(name, amountOfLegs, type);
+    this.color = color;
+  }
+
+  set name (value) {
+    throw new ReferenceError ('Dogs name is constant')
+  }
+  run() {
+    return `${this._name} is running`;
   }
 }
