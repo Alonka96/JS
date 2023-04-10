@@ -38,7 +38,7 @@ const newspaper = {
     },
   ],
   showArticles() {
-    this.articles.forEach(logItems.bind({ test: "value" }));
+    this.articles.forEach(logItems.bind(this));
   },
 };
 function logItems(currentArticle, index) {
