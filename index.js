@@ -38,11 +38,11 @@ const newspaper = {
     },
   ],
   showArticles() {
-    ///this -> newspaper
-    this.articles.forEach((currentArticle, index) => {
-      console.log(
-        `${this.title} --- ${index} : ${currentArticle.author} - ${currentArticle.header}`
-      );
-    });
+    this.articles.forEach(logItems.bind({ test: "value" }));
   },
 };
+function logItems(currentArticle, index) {
+  console.log(
+    `${this.title} --- ${index} : ${currentArticle.author} - ${currentArticle.header}`
+  );
+}
