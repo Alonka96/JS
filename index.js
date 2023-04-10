@@ -1,27 +1,48 @@
-class User {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.isBanned = false;
-  }
-}
-class Moderator extends User {
-  constructor(firstName, lastName) {
-    super(firstName, lastName);
-    this.isBanned = undefined;
-    this.position = "Moderator";
-  }
-  getBan(user) {
-    user.isBanned = true;
-  }
-
-  toggleBan(user) {
-    user.isBanned = !user.isBanned;
-  }
-}
-class Admin extends Moderator {
-  constructor(firstName, lastName) {
-    super(firstName, lastName);
-    this.position = "Admin";
-  }
-}
+const newspaper = {
+  title: "My super news",
+  articles: [
+    {
+      author: "Van Doe",
+      header: "Article1",
+      body: "lorem ipsum",
+    },
+    {
+      author: "John Doe",
+      header: "Article2",
+      body: "dolor sit amet",
+    },
+    {
+      author: "Jane Doe",
+      header: "Article3",
+      body: "lorem ipsum",
+    },
+    {
+      author: "Alex Doe",
+      header: "Article4",
+      body: "dolor sit amet",
+    },
+    {
+      author: "Carl Doe",
+      header: "Article5",
+      body: "lorem ipsum",
+    },
+    {
+      author: "Miky Doe",
+      header: "Article6",
+      body: "dolor sit amet",
+    },
+    {
+      author: "Ricky Doe",
+      header: "Article7",
+      body: "lorem ipsum",
+    },
+  ],
+  showArticles() {
+    ///this -> newspaper
+    this.articles.forEach((currentArticle, index) => {
+      console.log(
+        `${this.title} --- ${index} : ${currentArticle.author} - ${currentArticle.header}`
+      );
+    });
+  },
+};
