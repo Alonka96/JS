@@ -1,11 +1,43 @@
-function sumAll(...restArr) {
-  let sum = 0;
-  for (let i = 0; i < restArr.length; i++) {
-    sum += restArr[i];
-  }
-  return sum;
-}
+const monitor = {
+  sizes: {
+    length: {
+      value: 20,
+      scale: "sm",
+    },
+    width: {
+      value: 30,
+      scale: "sm",
+    },
+  },
+  brightness: "2000lm",
+  color: "black",
+  manufacturer: {
+    name: "Sony",
+    address: {
+      city: "London",
+      street: "Baker",
+      house: 27,
+    },
+  },
+};
 
-const arr1 = [1, 3, 5, 7];
-const arr2 = [2, 4, 6, 8];
-const concatedArray = [...arr1, ...arr2]; 
+/// d - Math.sqrt(a*a + b*b);
+// const diagonal = Math.sqrt(
+//   monitor.sizes.length.value * monitor.sizes.length.value + monitor.sizes.width.value * monitor.sizes.width.value);
+///вирішення проблеми>
+// const lengthValue = monitor.sizes.length.value;
+// const widthValue = monitor.sizes.width.value;
+// const diagonal = Math.sqrt(lengthValue * lengthValue + widthValue * widthValue);
+console.log(diagonal);
+
+const manufacturerCity = monitor.manufacturer.address.sity;
+///деструктурування (розібрання на елементи)
+const {
+  sizes: {
+    length: { value: lengthValue },
+    width: { value: widthValue },
+  },
+  manufacturer: {
+    address: { city },
+  },
+} = monitor;
