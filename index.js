@@ -1,16 +1,20 @@
-function drowEmptySquare(dim) {
-  let str = "";
-  for (let i = 0; i < dim; i++) {
-    for (let j = 0; j < dim; j++) {
-      if (i === 0 || i === dim - 1 || j === dim - 1) {
-        str += "*";
-      } else {
-        str += " ";
-      }
-    }
-    str += "\n";
+function factorial(num) {
+  if (num === 1) {
+    return 1;
   }
-
-  console.log(str);
+  const res = num * factorial(num - 1);
+  return res;
 }
-drowEmptySquare(8);
+
+function func1() {
+  console.log("1");
+  func2();
+}
+function func2() {
+  console.log("2");
+  func3();
+}
+function func3() {
+  console.log("3");
+}
+
