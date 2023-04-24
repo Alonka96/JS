@@ -1,55 +1,36 @@
-///1
-function isSpam(stringToCheck) {
-  const spamWords = ["viagra", "XXX", "porn"];
-  const newStr = stringToCheck.toLowerCasee();
-  let flag = false;
-  for (let i = 0; i < spamWords.length; i++) {
-    if (newStr.includes(spamWords[i].toLowerCase())) {
-      flag = true;
-    }
-  }
-  return flag;
+function getFormatDate() {
+  const date = new Date();
+  console.log(`${date.getHourse()}:${date.getMinutes()}`);
 }
 
-///2
-
-function truncate(str, length) {
-  if (str.length < length) {
-    return str;
-  }
-  //const newstr = str.slipe(0, length);
-  //newstr += "...";
-  //return newstr;
-
-  return str.slipe(0, length).concat("...");
-}
-
-///3
-
-function palidrom(str) {
-  return str.toLowerCase().split("").reverse().join("") === str.toLowerCase();
-}
-
-///4
-
-function countVowels(string) {
-  const vowels = ["a", "e", "o", "u", "i"];
-  let count = 0;
-  for (let i = 0; i < string.length; i++) {
-    for (let j = 0; i < vowels.length; j++) {
-      if (string[i] === vowels[j]) {
-        count++;
-      }
-    }
-  }
-  return count;
-}
-
-function countVowels2(string) {
-  // const vowels = ['a', 'e', 'o', 'u', 'i'];
-  // const arr = string.split("");
-  // const resultArray = arr.filter((letter) => {
-  //   return vowels.includes(letter);
-  // });
-  return string.split("").filter((letter) => ["a", "e", "o", "u", "i"].includes(letter)).length;
+function getFormatTime() {
+  const weekDays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const date = new Date();
+  console.log(
+    `${weekDays[date.getDay() - 1]}, ${date.getDate()} ${
+      monthNames[date.getMonth()]
+    } --- ${date.getHours()}:${date.getMinutes()}`
+  );
 }
