@@ -1,36 +1,22 @@
-function getFormatDate() {
-  const date = new Date();
-  console.log(`${date.getHourse()}:${date.getMinutes()}`);
-}
+class Student {
+  constructor(firstName, lastName, enterYear) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.enterYear = enterYear;
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  getCourse() {
+    // const year = new Date().getFullYear();
+    // const course = year - this.enterYear;
+    // if (course > 5) {
+    //   return "graduated";
+    // } else {
+    //   return course;
+    // }
 
-function getFormatTime() {
-  const weekDays = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const date = new Date();
-  console.log(
-    `${weekDays[date.getDay() - 1]}, ${date.getDate()} ${
-      monthNames[date.getMonth()]
-    } --- ${date.getHours()}:${date.getMinutes()}`
-  );
+    const course = new Date().getFullYear() - this.enterYear;
+    return course > 5 ? "graduated" : course;
+  }
 }
