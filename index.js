@@ -2,6 +2,7 @@ class LinkedItem {
   constructor(value) {
     this._value = value;
     this.next = null;
+    this.prev = null;
   }
   get value() {
     return this._value;
@@ -31,6 +32,7 @@ class LinkedList {
       this.tail = item;
     } else {
       ///якщо хтось вже стоїть
+      this.tail.prev = item;
       item.next = this.tail;
       this.tail = item;
     }
