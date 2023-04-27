@@ -1,22 +1,39 @@
-class Student {
-  constructor(firstName, lastName, enterYear) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.enterYear = enterYear;
+class LinkedItem {
+  constructor(value) {
+    this._value = value;
+    this.next = null;
   }
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
+  get value() {
+    return this._value;
   }
-  getCourse() {
-    // const year = new Date().getFullYear();
-    // const course = year - this.enterYear;
-    // if (course > 5) {
-    //   return "graduated";
-    // } else {
-    //   return course;
-    // }
+  set value(v) {
+    this._value = v;
+  }
+}
 
-    const course = new Date().getFullYear() - this.enterYear;
-    return course > 5 ? "graduated" : course;
+class LinkedList {
+  constructor(...args) {
+    this.length = 0;
+    this.head = null;
+    this.tail = null;
+    // for (let i = 0; i < args.length; i++) {
+    //   this.push(args[i]);
+    // }
+    args.forEach((el) => {this.push(el);
+    });
+  }
+
+  push(value) {
+    const item = new LinkedItem(value);
+    if (this.length === 0) {
+      ///якщо він перший
+      this.head = item;
+      this.tail = item;
+    } else {
+      ///якщо хтось вже стоїть
+      item.next = this.tail;
+      this.tail = item;
+    }
+    return ++this.length;
   }
 }
