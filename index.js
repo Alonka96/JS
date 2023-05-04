@@ -1,30 +1,11 @@
-/ Symbol
+function translater(stringToTranslate) {
+  const vocabulary = new Map();
+  vocabulary.set("cat", "кіт");
+  vocabulary.set("eat", "їсти");
+  vocabulary.set("dog", "собака");
 
-/*
-const symb = new Symbol();
-//Uncaught TypeError: Symbol is not a constructor
-const symb = Symbol();
-//undefined
-symb;
-//Symbol()
-const symb2 = Symbol('label for human');
-//undefined
-symb2
-//Symbol(label for human)
-const symb3 = Symbol();
-//undefined
-symb === symb3;
-//false
-
-*/
-
-
-
-const symb = Symbol();
-
-const obj = {
-    userName: 'John',
-    [symb]: 'Hello'
+  const words = stringToTranslate.toLowerCase().split(" ");
+  const translatedArray = words.map((word) => vocabulary.has(word) ? vocabulary.get(word) : word
+  );
+  return translatedArray.join(" ");
 }
-
-console.log(obj[symb]);
